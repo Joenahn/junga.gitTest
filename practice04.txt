@@ -1,0 +1,74 @@
+public class MinActivity extends AppCompatActivity{
+
+	double print1 = 0.19;
+	double print2 = 0.49;
+	double print3 = o.79;
+	double numOfPhotos;
+	double totalCost;
+
+	@override
+	protected void onCreate(Bundle savedInstanceState){
+	          super.onCreate(savedInstanceState);
+	          setContentView(R.layout.activity_main);
+
+	          final EditText photos = (EditText)findViewById(R.id.numOfPhotos);
+	         final RadioButton firstPrints = (RadioButton)findViewById(R.id.rad46Prints);
+	         final RadioButton secondPrints = (RadioButton)findViewById(R.id.rad57Prints);
+`	         final RadioButton thirdPrints = (RadioButton)findViewById(R.id.rad810Prints);
+	        final TextView result = (TextView)findViewById(R.id.textResult);
+
+	        Button conver = (Button)findViewById(R.id.btnCost);
+
+	       convert.setOnClickListener(new View.OnClickListener(){
+		
+	            public void onClick(View v){
+		numOfPhotos = Double.parseDouble(photos.getText().toString());
+		DecimalFormat price = new DecimalFormat(pattern:"###,###.##");
+		if(numOfPhotos <= 50){
+		       if(firstPrints.isChecked()){
+			totalCost = numOfPhotos * print1;
+			result.setText(price.format(totalCost) + "$");
+		       }
+		       else if(secondPrints.isChecked()){
+			totalCost = numOfPhotos * print2;
+			result.setText(price.format(totalCost) + "$");
+		       }
+		      else  if(thirdPrints.isChecked()){
+			totalCost = numOfPhotos * print3;
+			result.setText(price.format(totalCost) + "$");
+		       }
+
+		}else {
+		         Toast.makeText(context: MainActivity.this, text: "Please  choose a selection", Toast.LENGTH_LONG).show();
+		}
+	        }
+	}
+	);
+          }
+}
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
